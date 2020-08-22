@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: skyblue;
+        }
+        * {
+           box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+        }
+        .wrap{
+            width: 400px;
+            margin: auto;
+            height: auto;
+            background:#56016b;
+            padding: 15px;
+        }
+        input[type=text]{
+            width: 100%;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        input[type=button]{
+            width: 60px;
+            margin: 5px;
+            padding: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        p{
+            
+          
+           font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p >CALCULATOR</p>
+    <div class="wrap">
+    <form name="myform">
+       <input type="text" name="display" ><br><br>
+        <input type="button" name="btnsin" value="sin" onclick="fnsin()">
+        <input type="button" name="btncos" value="cos" onclick="fncos()">
+        <input type="button" name="btntan" value="tan" onclick="fntan()">
+        <input type="button" name="btnsqr" value="^2" onclick="square()">
+        <input type="button" name="btnsqrt" value="Rt" onclick="squarert()"><br><br>
+  
+        <input type="button" name="btn7" value="7" onclick="myclick('7')">
+        <input type="button" name="btn8" value="8" onclick="myclick('8')">
+        <input type="button" name="btn9" value="9" onclick="myclick('9')">
+        <input type="button" name="btndel" value="DEL" onclick="backspace()">
+        <input type="button" name="btnac" value="AC" onclick="ac()"><br><br>
+        <input type="button" name="btn4" value="4" onclick="myclick('4')">
+        <input type="button" name="btn5" value="5" onclick="myclick('5')">
+        <input type="button" name="btn6" value="6" onclick="myclick('6')">
+        <input type="button" name="btnsub" value="-" onclick="myclick('-')">
+        <input type="button" name="btnadd" value="+" onclick="myclick('+')"><br><br>
+        <input type="button" name="btn1" value="1" onclick="myclick('1')">
+        <input type="button" name="btn2" value="2" onclick="myclick('2')">
+        <input type="button" name="btn3" value="3" onclick="myclick('3')">
+        <input type="button" name="btnmul" value="*" onclick="myclick('*')">
+        <input type="button" name="btndiv" value="/" onclick="myclick('/')"><br><br>
+  
+        <input type="button" name="btnzero" value="0" onclick="myclick('0')">
+        <input type="button" name="btntwozero" value="00" onclick="myclick('00')">
+        <input type="button" name="btnpoint" value="." onclick="myclick('.')">
+        <input type="button" name="btnper" value="%" onclick=" percentage()">
+        <input type="button" name="btnequal" value="=" onclick="equalto()"><br><br>
+      
+    </form>
+</div>
+    <script type="text/javascript">
+      function myclick(a){
+          myform.display.value+=a;        
+      }
+      function equalto(){
+          myform.display.value=eval(myform.display.value);
+      }
+      function ac(){
+          myform.display.value="0";
+      }
+      function backspace(){
+          var prevalue=myform.display.value;
+          myform.display.value=prevalue.substr(0,prevalue.length-1
+          );
+      }
+      function fnsin(){
+          myform.display.value=Math.sin(myform.display.value);
+      
+      }
+      function fncos(){
+          myform.display.value=Math.cos(myform.display.value);
+      
+      }
+      function fntan(){
+          myform.display.value=Math.tan(myform.display.value);
+      
+      }
+      function square(){
+          myform.display.value=Math.pow(myform.display.value,2);
+      }
+      function squart(){
+          myform.display.value=Math.pow(myform.display.value,1/2);
+      }
+     function percentage(){
+         myform.display.value=Math.percentage(myform.display.value,1/100);
+     }
+      </script>
+</body>
+</html>
